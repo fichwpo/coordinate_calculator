@@ -1,0 +1,72 @@
+<form [formGroup]='input_form' class=" w-fit px-8 pt-4 pb-8 mb-14 border-2 border-solid border-orange-700 rounded-xl bg-white/80">
+  <!-- form header -->
+  <p class="tracking-wide text-xl text-orange-800 w-full mb-4 border-b-2 border-orange-700  text-center"> Enter your Inputs </p>
+  <!-- dimension input -->
+  <div class='flex space-x-14'>
+    <mat-form-field class="w-20">
+      <mat-label>width</mat-label>
+      <input formControlName="width" matInput input="number" placeholder="3">
+    </mat-form-field>
+    <mat-form-field class="w-20" >
+      <mat-label>height</mat-label>
+      <input formControlName="height" matInput placeholder="3">
+    </mat-form-field>
+  </div>
+
+  <!-- corner point 1 -->
+  <div class='flex space-x-14'>
+    <mat-form-field class="w-20" >
+      <mat-label>x-value</mat-label>
+      <input formControlName="x1" matInput input="number" placeholder=1.00>
+    </mat-form-field>
+    <mat-form-field class="w-20">
+      <mat-label>y-value</mat-label>
+      <input formControlName="y1" matInput input="number" placeholder=1.00>
+    </mat-form-field>
+  </div>
+
+  <!-- corner point 2 -->
+  <div class='flex space-x-14'>
+    <mat-form-field class="w-20">
+      <mat-label>x-value</mat-label>
+      <input formControlName="x2" matInput input="number" placeholder=1.00>
+    </mat-form-field>
+    <mat-form-field class="w-20">
+      <mat-label>y-value</mat-label>
+      <input formControlName="y2" matInput input="number" placeholder=3.00>
+    </mat-form-field>
+  </div>
+
+  <!-- corner point 3 -->
+  <div class='flex space-x-14'>
+    <mat-form-field class="w-20">
+      <mat-label>x-value</mat-label>
+      <input formControlName="x3" matInput input="number" placeholder=3.00>
+    </mat-form-field>
+    <mat-form-field class="w-20" >
+      <mat-label>y-value</mat-label>
+      <input formControlName="y3" matInput input="number" placeholder=1.00>
+    </mat-form-field>
+  </div>
+
+  <!-- corner point 4 -->
+  <div class='flex space-x-14'>
+    <mat-form-field class="w-20">
+      <mat-label>x-value</mat-label>
+      <input formControlName="x4" matInput input="number" placeholder=3.00>
+    </mat-form-field>
+    <mat-form-field class="w-20">
+      <mat-label>y-value</mat-label>
+      <input formControlName="y4" matInput placeholder=3.00>
+    </mat-form-field>
+  </div>
+
+  <!--buttons -->
+  <div class="space-x-12">
+    <button (click)="add()" *ngIf="input_form.dirty && input_form.valid" mat-button type="submit" class=" w-20 rounded-lg mt-6 py-1 text-white hover:bg-amber-600 bg-amber-500"> Add </button>
+    <button *ngIf="input_form.pristine || input_form.invalid" disabled mat-button type="submit" class=" w-20 rounded-lg mt-6 py-1 text-stone-300 bg-amber-800"> Add </button>
+    <button *ngIf="!at_least_one" disabled mat-button type="submit" class=" w-20 rounded-lg mt-6 py-1 text-stone-300 bg-orange-800"> Submit </button>
+    <button (click)="submit()" *ngIf="at_least_one" mat-button type="submit" class=" w-20 rounded-lg mt-6 py-1 text-white hover:bg-orange-600 bg-orange-500"> Submit </button>
+  </div>
+
+</form>

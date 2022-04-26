@@ -1,0 +1,7 @@
+<div class="bg-amber-50 max-h-screen h-screen" style="background-image: url(./assets/bg.jpg); background-size: cover">
+<app-header></app-header>
+<div class="flex grid grid-rows-1 grid-cols-7 mx-6">
+  <app-input-form class="col-span-2" (onSubmit)="submit()" (onRequestChange)="addRequest($event)"></app-input-form>
+  <app-output-dash class="h-full col-span-4"></app-output-dash>
+</div>
+</div>
