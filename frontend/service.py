@@ -110,18 +110,26 @@ def build_pixel_matrix(dimensions, corners, bottom_left, top_right):
     #split into a vector of vectors of coordinate pairs and flip for correct orientation
     return np.flipud(np.array_split(pixel_array, dimensions[1]))
 
-@app.route("/mock")
-def mock():
-    x = 'JSON'
-    json_array = json.loads(x)
-    return jsonify(parse_json_array(json_array))
+json_list = {"list":[{"dimensions": [3,3],"corners":[[1,1],[1,3],[3,1],[3,3]]}, {"dimensions": [3,2],"corners":[[1,1],[1,3],[6,1],[6,3]]}]}
+json_single = {"dimensions": [3,3],"corners":[[1,1],[1,3],[3,1],[3,3]]}
 
-@app.route("/json_example", methods=['POST'])
-def json_example():
-    req_data = request.get_json()
-    print(req_data)
-    print(request.headers)
-    return req_data
+@app.route("/mock/list")
+def mock_list():
+    return jsonify({"solutions":parse_json_array(json_list["list"])})
+
+@app.route("/mock/single")
+def mock_single():
+    return calculate(json_single["dimensions"], json_single["corners"])
+
+
+@app.route("/example/list")
+def example_list():
+    return json_list
+
+@app.route("/example/single")
+def example_single():
+    return json_single
+
 
 
 if __name__ == "__main__":
