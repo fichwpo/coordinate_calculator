@@ -20,7 +20,9 @@ http://localhost:5000/mock/single : will provide the response for the single obj
 http://localhost:5000/mock/list : will provide the response for the list of objects example request
 
 
-To test the server you need to make requests. This is easiest done through software like Postman or Insomnia. There are two ways to make a request either as a single or a list - both are post methods. The payload will be placed in the body as raw json, so the request will need the "Content-Type" header set to be set to "application/json". Postman does this automatically if you select raw JSON as the type for the body. To send a single request structure the body as an object with two fields: "dimensions" and "corners". Both of these fields are arrays of arrays of size 2.
+To test the server you need to make requests. This is easiest done through software like Postman or Insomnia. There are two ways to make a request either as a single or a list - both are post methods. The payload will be placed in the body as raw json, so the request will need the "Content-Type" header set to be set to "application/json". Postman does this automatically if you select raw JSON as the type for the body. 
+
+To send a single request structure the body as an object with two fields: "dimensions" and "corners". Both of these fields are arrays of arrays of size 2.
 
 ex. single request body: {"dimensions": [3,3],"corners":[[1,1],[1,3],[3,1],[3,3]]}
 
