@@ -10,9 +10,13 @@ Now that the server is running you can start making requests.
 The server runs on http://localhost:5000
 
 http://localhost:5000/calculate : will calculate coordinate points from json body
+
 http://localhost:5000/example/single :  will provide an example JSON body for a single object request
+
 http://localhost:5000/example/list : will provide an example JSON body for a list of objects request
+
 http://localhost:5000/mock/single : will provide the response for the single object example request
+
 http://localhost:5000/mock/list : will provide the response for the list of objects example request
 
 
@@ -29,9 +33,7 @@ ex list request body: {"list":[{"dimensions": [3,3],"corners":[[1,1],[1,3],[3,1]
 The response will be list of stringified arrays of solutions or error messages if the JSON Body is malformed.
 
 # Using the Angular UI to make requests
-
-# Downloading the code base
-Makes sure you have python3, Angular 13,node installed(I use version 14.19.1). Navigate into the frontend directory in the terminal and run npm install. also run pip3 install on the imports in the service.py file (eg. pip3 install flask). Then run npm start. This will start both the server and client. However, if you would like to run them seperately in seperate terminals just run ng serve for the client and python3 service.py for the server. I figured its a lot more work to run the whole application - so I uploaded a screenshot of the UI so you can see it without downloading it. It generates valid JSON that you could paste into the body-field of Postman, then displays the response. All requests sent from the UI are sent as a list of JSON objects.
+Makes sure you have python3, Angular 13,node installed(I use version 14.19.1). Clone the repository then navigate into the frontend directory in the terminal and run npm install. also run pip3 install on the imports in the service.py file (eg. pip3 install flask). Then run npm start. This will start both the server and client. However, if you would like to run them seperately in seperate terminals just run ng serve for the client and python3 service.py for the server. I figured its a lot more work to run the whole application - so I uploaded a screenshot of the UI so you can see it without downloading it. It generates valid JSON that you could paste into the body-field of Postman, then displays the response. All requests sent from the UI are sent as a list of JSON objects.
 
 
 <img width="1433" alt="Screen Shot 2022-04-27 at 9 47 30 PM" src="https://user-images.githubusercontent.com/103947024/165659924-2e7647e7-ca2c-4621-8f8e-37c81b2fb519.png">
@@ -45,6 +47,6 @@ This was my first time using flask and was really impressed by how little code i
 
 I did run into several problems. I intially had trouble with flask because I kept trying to pass in a list of object like [{},{},{}]. I wanted to explore testing frameworks for unit testing in python but I never got around to it. Also on the Angular side I originally wanted to have the service in an external service class but I kept getting errors - so for the sake of time I abandoned that idea. I also probably spent too much time on styling the front end. Finally something that took me by surprise was the application not building properly and not running on production mode correctly. I think it was a problem with the tailwind configuration. This was the reason why I couldnt use Docker.
 
-Overall it was great learning experience and showed me I still have a lot of areas that I can improve in. I would really like the chance to have a 1:1 mentorship with an experienced engineer that could help me power through hurdles like these and accelerate the learning process.
+Overall the assignment was a great learning experience, and it showed me I still have a lot to learn. I would really like the chance to have a 1:1 mentorship with an experienced engineer who could help accelerate the learning process.
 
 
